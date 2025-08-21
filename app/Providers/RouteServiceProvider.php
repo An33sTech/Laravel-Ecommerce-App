@@ -35,9 +35,7 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
-            Route::middleware(['web', 'auth:admin']) // add your custom admin guard
-                ->prefix('admin')
-                ->name('admin.')
+            Route::middleware('web')
                 ->group(base_path('routes/admin.php'));
         });
     }
